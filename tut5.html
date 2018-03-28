@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="app5">
+
+<head>
+    <title>Angular JS Tutorial</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+    <script src="js/example5.js"></script>
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        .ng-cloak {
+            display: none;
+        }
+        
+        table {
+            width: 400px;
+            border: 2px solid black;
+            text-align: left;
+            padding: 10px
+        }
+        
+        input.ng-dirty.ng-invalid {
+            border.color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="gListCtrl">
+        <h3>Grocery List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Purchased</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="grocery in groceries">
+                <td>{{grocery.item}}</td>
+                <td><input type="checkbox" ng-model="grocery.purchased"></td>
+            </tr>
+
+        </table>
+        <hr>
+        <p> new item </p>
+        <input type="text" ng-model="newly"/>
+        <button type="submit" ng-click="add(newly)">submit</button>
+
+        <h3>{{Missing}}</h3>
+
+    </div>
+</body>
+
+</html>

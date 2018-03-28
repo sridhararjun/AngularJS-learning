@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="app4">
+
+<head>
+    <title>Angular JS Tutorial</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+    <script src="js/example4.js"></script>
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        .ng-cloak {
+            display: none;
+        }
+        
+        .bluetext {
+            color: blue;
+        }
+        
+        .boldtext {
+            font-weight: bold;
+        }
+        
+        .stripedblue {
+            color: #007fff;
+            background-color: #DBE9F4;
+        }
+        
+        .stripedbeige {
+            color: #CC0000;
+            background-color: #f5f5dc;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="control">
+        <input ng-blur="blur=blur+1" ng-click="click=click+1" ng-dblclick="dblclick=dblclick+1" ng-copy="copy=copy+1" ng-paste="paste=paste+1"
+            ng-cut="cut=cut+1" ng-focus="focus=focus+1" ng-model="confirmed" ng-change="change=change+1" ng-keydown="keydown($event)"
+            ng-mouseenter="mouseenter=mouseenter+1" ng-mouseleave="mouseleave=mouseleave+1" />
+
+        <h4>Magic</h4>
+        Blur event : {{blur}} Click event : {{click}} dblclick event : {{dblclick}} copy event : {{copy}} paste event : {{paste}}
+        cut event : {{cut}} focus event : {{focus}} keydown event : {{kdevent}} mouseenter event : {{mouseenter}} mouseleave
+        event : {{mouseleave}}
+
+        <hr>
+
+        <p>
+            <input type="checkbox" ng-model="dayTimeButton" />Morning
+        </p>
+        <p ng-bind="dayTimeButton" />
+        <p ng-hide="!dayTimeButton">Good Morning</p>
+        <p ng-hide="dayTimeButton">Good Evening</p>
+        <hr>
+
+        <p>
+            <select ng-model="value">
+             <option value="bluetext">bluetext</option>
+                 <option value="boldtext">boldtext</option>
+
+        </select>
+
+            <h3>
+                <p ng-class="value">Textt</p>
+            </h3>
+        </p>
+    </div>
+</body>
+
+</html>

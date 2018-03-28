@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="app3">
+
+<head>
+    <title>Angular JS Tutorial</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+    <script src="js/example3.js"></script>
+</head>
+
+<body>
+    <div ng-controller="groceryController">
+        <h3 class="ListTitle"> {{groceries.length}} Groceries to Get </h3>
+        <p style="margin: 0 0 -15px 0"> {{ groceries[0].item }} </p>
+        <ol start="2">
+            <li data-ng-repeat="grocery in groceries">
+                <h3 data-ng-bind="grocery.item"></h3>
+            </li>
+        </ol>
+        <table>
+            <tr ng-repeat-start="grocery in groceries">
+                <td ng-bind="grocery.item"></td>
+            </tr>
+            <tr ng-repeat-end>
+                <td ng-bind="grocery.purchased"></td>
+            </tr>
+        </table>
+        <h1> Lets change the content </h1>
+        <input type="text" ng-model="groceries[0].item" />
+        <hr/>
+        <h4> Grocery List </h4>
+        <div ng-include="'grocerylist.html'"></div>
+        <input type="checkbox" ng-model="value" />Check for unordered
+
+        <ng-include src="displayList()"></ng-include>
+
+    </div>
+    <hr>
+    </hr>
+    <div>
+        <label for="switchTest">Enter something from 1 to 2</label>
+        <input type="text" data-ng-model="someNumber" />
+
+        <div ng-switch="someNumber">
+            <p ng-switch-when="1">You entered 1</p>
+            <p ng-switch-when="2">You entered 2</p>
+            <p ng-switch-default="1">makka kalangudhapa</p>
+        </div>
+    </div>
+</body>
+
+</html>
