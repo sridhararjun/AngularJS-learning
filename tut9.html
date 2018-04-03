@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="app9">
+
+<head>
+    <title>Angular JS Tutorial</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+    <script src="js/example9.js"></script>
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        .ng-cloak {
+            display: none;
+        }
+        
+        .thick {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="mainCtrl">
+        <ul jql-directive>
+            <li id="barry">Barry Bonds</li>
+            <ul>
+                <li>AVG:.298
+                    <li>HR:456
+                        <li>OBP:.654
+            </ul>
+            <li id="Steve">Steve Bonds</li>
+            <ul>
+                <li>AVG:.298
+                    <li>HR:456
+                        <li>OBP:.654
+            </ul>
+            <li id="Darren">Darren Bonds</li>
+            <ul>
+                <li>AVG:.298
+                    <li>HR:456
+                        <li>OBP:.654
+            </ul>
+            <h4>List of players</h4>
+            <span id="listOfPlayers"></span>
+        </ul>
+        <button ng-click="unBold()">Toggle</button>
+        <br>
+        Barry's Number = <span id="barNum"></span>
+        Hank Bold? = <span id="hanke"></span>
+        Barry's ID = <span id="machiIDEna"></span>
+    </div>
+</body>
+
+</html>
